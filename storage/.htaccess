@@ -1,0 +1,3 @@
+# This folder contains local-dev email logs, including account verification
+# links. It must never be reachable over the web — deny everything.
+Require all denied
