@@ -128,7 +128,7 @@ New accounts must verify their email before they can sign in. Here's the flow:
 ### Sending real email vs. local dev mode
 By default, `MAIL_MODE` in `includes/mailer.php` is set to `'log'` — **no real
 email is sent**. Instead, every verification email is written as an `.html`
-file to `storage/mail_log/`, so you (or your instructor) can open the newest
+file to `storage/mail_log/`, so you can open the newest
 file for a given address and click the real verification link — no SMTP setup
 required to test the feature locally. XAMPP/MAMP don't have outbound mail
 configured out of the box, so this is the sane default.
