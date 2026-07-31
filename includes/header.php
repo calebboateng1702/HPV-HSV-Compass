@@ -10,7 +10,7 @@ if (!isset($pageTitle)) $pageTitle = 'HPV·HSV Compass';
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title><?= e($pageTitle) ?> — HPV·HSV Compass</title>
+<title><?= e($pageTitle) ?> — Check Mate</title>
 
 <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/style.css">
 <link rel="icon" href="<?= BASE_URL ?>/assets/images/logo/favicon/favicon.png?v=<?= filemtime(__DIR__ . '/../assets/images/logo/favicon/favicon.ico') ?>" type="image/png" sizes="32x32">

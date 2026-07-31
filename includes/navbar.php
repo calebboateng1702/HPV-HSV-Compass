@@ -31,4 +31,5 @@
       <a href="<?= BASE_URL ?>/register.php" class="nav-pill">Create Account</a>
     <?php endif; ?>
   </nav>
+
 </header>

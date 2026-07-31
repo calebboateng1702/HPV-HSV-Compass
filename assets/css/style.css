@@ -40,7 +40,7 @@ body {
   height: 100%;
   z-index: -1;
   opacity: 0.6;
-  background-image: url('../images/bg-pattern.png');
+  background-image: url("../images/bg-pattern.png");
   background-repeat: repeat;
   background-size: 30px;
 }
@@ -66,18 +66,22 @@ img {
 }
 
 /* ---------------- NAVBAR ---------------- */
+
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
+  justify-content: space-around;
+  max-width: 100%;
+  margin: 0 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   padding: 1.2rem 1.2rem;
-
+  background: white;
+  box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.08) ;
 }
 
-.logo img{
+.logo img {
   width: 130px;
 }
 
@@ -507,9 +511,8 @@ figure.lesson-media figcaption {
   max-width: 980px;
   margin: 2rem auto;
 }
-.card-radius{
+.card-radius {
   border-radius: 0px 1.5rem 1.5rem 0;
-
 }
 .auth-shell {
   max-width: 440px;
@@ -557,7 +560,7 @@ figure.lesson-media figcaption {
   box-shadow: var(--shadow-card);
   background: var(--text-dark);
 }
-.auth-card-radius{
+.auth-card-radius {
   border-radius: 1.5rem 0 0 1.5rem;
 }
 .auth-slide {
@@ -634,10 +637,9 @@ figure.lesson-media figcaption {
   .auth-slideshow {
     display: none;
   }
-  .card-radius{
-  border-radius: 1.5rem;
-
-}
+  .card-radius {
+    border-radius: 1.5rem;
+  }
 }
 
 /* ---------------- DASHBOARD ---------------- */
