@@ -22,8 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (!$user || !password_verify($password, $user['password_hash'])) {
             $_SESSION['flash_error'] = 'Incorrect email or password.';
-        } elseif (!$user['email_verified']) {
-            $_SESSION['flash_error_html'] = 'Please verify your email before signing in. Check your inbox, or <a href="' . BASE_URL . '/check-email.php?email=' . urlencode($user['email']) . '" style="text-decoration:underline; font-weight:700;">resend the verification email</a>.';
         } else {
             $upd = get_db()->prepare('UPDATE users SET signins = signins + 1, last_login = NOW() WHERE id = ?');
             $upd->execute([$user['id']]);

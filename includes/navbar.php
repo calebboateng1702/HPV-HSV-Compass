@@ -1,8 +1,7 @@
 <?php $current = basename($_SERVER['SCRIPT_NAME']); ?>
 <header class="navbar">
   <a href="<?= BASE_URL ?>/index.php" class="logo">
-    <div class="logo-icon"><img src="<?= BASE_URL ?>/assets/images/logo/logo.png" alt="HPV·HSV Compass Logo">></div>
-    <span>HPV·HSV Compass</span>
+    <div class="logo-icon"><img src="<?= BASE_URL ?>/assets/images/logo/logo.png" alt="HPV·HSV Compass Logo"></div>
   </a>
 
   <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">

@@ -3,7 +3,7 @@
 require __DIR__ . '/config/database.php';
 require __DIR__ . '/includes/auth.php';
 require __DIR__ . '/includes/functions.php';
-require __DIR__ . '/includes/mailer.php';
+
 
 if (is_logged_in()) { header('Location: ' . BASE_URL . '/dashboard.php'); exit; }
 
@@ -30,22 +30,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($errors)) {
         $hash = password_hash($password, PASSWORD_DEFAULT);
-        $stmt = get_db()->prepare('INSERT INTO users (name, email, password_hash) VALUES (?, ?, ?)');
-        $stmt->execute([$name, $email, $hash]);
-        $userId = get_db()->lastInsertId();
 
-        $stmtUser = get_db()->prepare('SELECT * FROM users WHERE id = ?');
-        $stmtUser->execute([$userId]);
-        $newUser = $stmtUser->fetch();
+$stmt = get_db()->prepare(
+    'INSERT INTO users (name, email, password_hash) VALUES (?, ?, ?)'
+);
 
-        send_verification_email($newUser);
+$stmt->execute([$name, $email, $hash]);
 
-        header('Location: ' . BASE_URL . '/check-email.php?email=' . urlencode($email));
-        exit;
-    } else {
-        $_SESSION['flash_error'] = implode(' ', $errors);
-        header('Location: ' . BASE_URL . '/register.php');
-        exit;
+$userId = get_db()->lastInsertId();
+
+/* Log the user in immediately */
+$_SESSION['user_id'] = $userId;
+
+/* Optional success message */
+$_SESSION['flash_success'] = 'Account created successfully. Welcome to HPV-HSV Compass!';
+
+header('Location: ' . BASE_URL . '/dashboard.php');
+exit;
     }
 }
 

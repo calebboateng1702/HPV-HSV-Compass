@@ -25,7 +25,7 @@ require __DIR__ . '/includes/bg-pattern.php';
     </div>
   </div>
   <div class="hero-img">
-    <img src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Person learning online">
+    <img src="assets/images/hero.png" alt="Person learning online">
   </div>
 </section>
 

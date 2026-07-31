@@ -13,9 +13,9 @@ if (!isset($pageTitle)) $pageTitle = 'HPV·HSV Compass';
 <title><?= e($pageTitle) ?> — HPV·HSV Compass</title>
 
 <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/style.css">
-<link rel="icon" href="<?= BASE_URL ?>/assets/images/logo/favicon/favicon.ico?v=<?= filemtime(__DIR__ . '/../assets/images/logo/favicon/favicon.ico') ?>" type="image/x-icon">
-<link rel="shortcut icon" href="<?= BASE_URL ?>/assets/images/logo/favicon/favicon.ico?v=<?= filemtime(__DIR__ . '/../assets/images/logo/favicon/favicon.ico') ?>">
-<link rel="apple-touch-icon" href="<?= BASE_URL ?>/assets/images/logo/favicon/favicon.png">
+<link rel="icon" href="<?= BASE_URL ?>/assets/images/logo/favicon/favicon.png?v=<?= filemtime(__DIR__ . '/../assets/images/logo/favicon/favicon.ico') ?>" type="image/png" sizes="32x32">
+<link rel="shortcut icon" href="<?= BASE_URL ?>/assets/images/logo/favicon/favicon.png?v=<?= filemtime(__DIR__ . '/../assets/images/logo/favicon/favicon.ico') ?>" type="16x16">
+<link rel="icon" href="<?= BASE_URL ?>/assets/images/logo/favicon/favicon.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">

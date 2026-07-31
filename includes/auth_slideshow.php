@@ -6,19 +6,18 @@
 $authSlides = [
     [
         'img' => 'assets/images/slide 01.jpg',
-        'quote' => 'Clear, judgment-free education — at your own pace.',
     ],
     [
         'img' => 'assets/images/slide 02.jpg',
-        'quote' => 'Confidential screenings, booked in minutes.',
     ],
     [
-        'img' => 'https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=900',
-        'quote' => 'Vaccination and prevention, explained simply.',
+        'img' => 'assets/images/slide 03.jpg',
     ],
     [
-        'img' => 'https://images.pexels.com/photos/7659874/pexels-photo-7659874.jpeg?auto=compress&cs=tinysrgb&w=900',
-        'quote' => 'An AI assistant, ready whenever you have questions.',
+        'img' => 'assets/images/slide 04.jpg',
+    ],
+    [
+        'img' => 'assets/images/slide 05.jpg',
     ],
 ];
 ?>
@@ -27,7 +26,6 @@ $authSlides = [
     <div class="auth-slide <?= $i === 0 ? 'active' : '' ?>">
       <img src="<?= e($slide['img']) ?>" alt="">
       <div class="auth-slide-overlay">
-        <p class="auth-slide-quote"><?= e($slide['quote']) ?></p>
       </div>
     </div>
   <?php endforeach; ?>

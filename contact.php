@@ -32,7 +32,7 @@ require __DIR__ . '/includes/bg-pattern.php';
   <div class="grid-2">
     <div>
       <div style="display:flex; gap:12px; margin-bottom:1.1rem;"><i class="fas fa-envelope" style="width:38px; height:38px; border-radius:10px; background:rgba(44,125,160,0.1); color:var(--teal); display:flex; align-items:center; justify-content:center; flex-shrink:0;"></i><div><strong>Email</strong><br>support@hpvhsvcompass.example</div></div>
-      <div style="display:flex; gap:12px; margin-bottom:1.1rem;"><i class="fas fa-phone" style="width:38px; height:38px; border-radius:10px; background:rgba(44,125,160,0.1); color:var(--teal); display:flex; align-items:center; justify-content:center; flex-shrink:0;"></i><div><strong>Support line</strong><br>1-800-555-0142 (24/7)</div></div>
+      <div style="display:flex; gap:12px; margin-bottom:1.1rem;"><i class="fas fa-phone" style="width:38px; height:38px; border-radius:10px; background:rgba(44,125,160,0.1); color:var(--teal); display:flex; align-items:center; justify-content:center; flex-shrink:0;"></i><div><strong>Support line</strong><br>+233 205421585 (24/7)</div></div>
       <div style="display:flex; gap:12px;"><i class="fas fa-location-dot" style="width:38px; height:38px; border-radius:10px; background:rgba(44,125,160,0.1); color:var(--teal); display:flex; align-items:center; justify-content:center; flex-shrink:0;"></i><div><strong>Partner clinics</strong><br>Available in most major metro areas</div></div>
     </div>
     <form method="POST" class="form-plain" style="display:flex; flex-direction:column; gap:0.9rem;">
