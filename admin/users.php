@@ -1,9 +1,7 @@
 <?php
-
 require __DIR__ . '/../config/database.php';
 require __DIR__ . '/../includes/auth.php';
 require __DIR__ . '/../includes/functions.php';
-
 require_admin();
 $pdo = get_db();
 
@@ -34,7 +32,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $users = $pdo->query('SELECT * FROM users ORDER BY created_at DESC')->fetchAll();
 $pageTitle = 'Manage Users';
 require __DIR__ . '/_admin_header.php';
-require __DIR__ . '/../includes/bg-pattern.php';
 ?>
 
 <h2 style="color:var(--text-dark); margin-bottom:1.2rem;"><i class="fas fa-users"></i> Manage Users</h2>

@@ -108,6 +108,49 @@ Limits: images up to 5MB (JPG/PNG/GIF/WEBP), videos up to 75MB (MP4/WEBM/MOV) �
 - Admin routes are protected by `require_admin()`, which checks both session
   authentication and role.
 
+## 6. Email verification
+
+New accounts must verify their email before they can sign in. Here's the flow:
+
+1. **Register** → account is created with `email_verified = 0` and a random 64-char
+   token (24-hour expiry) → redirected to `check-email.php`
+2. **Verify** → clicking the emailed link hits `verify.php?token=...`, which
+   activates the account (or shows a clear "expired"/"invalid" state with a
+   resend option)
+3. **Login** is blocked for unverified accounts, with an inline "resend
+   verification email" link in the error message
+4. **Resend** (`resend_verification.php`) has a 60-second cooldown per account
+   to prevent spam-clicking, and never reveals whether an email is registered
+5. **Admin override**: `admin/users.php` shows a Verified/Unverified badge per
+   user and lets an admin manually mark someone verified — useful if mail
+   delivery isn't set up yet, or for support requests
+
+### Sending real email vs. local dev mode
+By default, `MAIL_MODE` in `includes/mailer.php` is set to `'log'` — **no real
+email is sent**. Instead, every verification email is written as an `.html`
+file to `storage/mail_log/`, so you (or your instructor) can open the newest
+file for a given address and click the real verification link — no SMTP setup
+required to test the feature locally. XAMPP/MAMP don't have outbound mail
+configured out of the box, so this is the sane default.
+
+To send real email, change `MAIL_MODE` to `'smtp'` in `includes/mailer.php`.
+This uses PHP's built-in `mail()` function, which requires your server to have
+a working mail transport (Postfix/sendmail on Linux, or an SMTP relay
+configured in `php.ini` on Windows). For production, swap in a real library
+like PHPMailer instead — the only function that needs to change is
+`send_mail()` in `includes/mailer.php`; nothing else in the app needs to know.
+
+`storage/` is blocked from all web access via `.htaccess` (Apache). **Note:**
+PHP's built-in dev server (`php -S`) does not honor `.htaccess` files — that
+protection only applies once you're running under Apache (e.g. real XAMPP,
+not just `php -S` for a quick test). Don't rely on `php -S` if you're testing
+with real user data.
+
+If you're upgrading an existing install (not a fresh `schema.sql` import), run
+`database/migration_add_email_verification.sql` once — it also marks any
+already-existing accounts as verified so nobody already using the site gets
+locked out.
+
 ## 7. Notes on the AI Assistant
 
 Per project scope, this is a **rule-based** assistant (keyword matching against
@@ -118,3 +161,9 @@ real LLM (e.g. the Claude API), the only file that needs to change is
 `includes/ai_responses.php` — the rest of the app (chat UI, logging, session
 gating) stays the same.
 
+## 8. What's intentionally out of scope
+
+This is a teaching/demo-grade deployment, not hardened for production traffic:
+no rate limiting (beyond the verification-resend cooldown), no password-reset flow, no HTTPS
+enforcement (add this at the web server level), no automated tests. All of
+these are natural next steps if this goes to a real client.

@@ -1,5 +1,4 @@
 <?php
-
 require __DIR__ . '/config/database.php';
 require __DIR__ . '/includes/auth.php';
 require __DIR__ . '/includes/functions.php';
@@ -21,7 +20,6 @@ $upcomingAppts = $apptStmt->fetchAll();
 
 $pageTitle = 'Dashboard';
 require __DIR__ . '/includes/header.php';
-require __DIR__ . '/includes/bg-pattern.php';
 ?>
 
 <h2 style="color:var(--text-dark); margin-bottom:1.2rem;">Welcome, <?= e(explode(' ', $user['name'])[0]) ?> 👋</h2>

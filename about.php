@@ -1,18 +1,16 @@
 <?php
-
 require __DIR__ . '/config/database.php';
 require __DIR__ . '/includes/auth.php';
 require __DIR__ . '/includes/functions.php';
 $pageTitle = 'About';
 require __DIR__ . '/includes/header.php';
-require __DIR__ . '/includes/bg-pattern.php';
 ?>
 
 <div class="card">
   <div class="grid-2">
     <div>
       <div class="section-heading"><i class="fas fa-circle-info"></i><h2>About the platform</h2></div>
-      <p class="section-subtext">HPV·HSV Compass is a digital sexual health education platform built to replace stigma with clear, structured, judgment-free learning — plus the practical tools to act on it.</p>
+      <p class="section-subtext">Check mate is a digital sexual health education platform built to replace stigma with clear, structured, judgment-free learning — plus the practical tools to act on it.</p>
       <ul style="display:flex; flex-direction:column; gap:0.9rem; margin-top:1rem;">
         <li style="display:flex; gap:10px;"><i class="fas fa-graduation-cap" style="color:var(--teal); margin-top:3px;"></i> Structured lessons on HPV and HSV, written in plain language and reviewed for accuracy.</li>
         <li style="display:flex; gap:10px;"><i class="fas fa-chart-line" style="color:var(--teal); margin-top:3px;"></i> Personal progress tracking so you always know what you've learned and what's next.</li>

@@ -2,7 +2,6 @@
 require __DIR__ . '/../config/database.php';
 require __DIR__ . '/../includes/auth.php';
 require __DIR__ . '/../includes/functions.php';
-
 require_admin();
 $pdo = get_db();
 
@@ -17,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $messages = $pdo->query('SELECT * FROM contact_messages ORDER BY created_at DESC')->fetchAll();
 $pageTitle = 'Messages';
 require __DIR__ . '/_admin_header.php';
-require __DIR__ . '/../includes/bg-pattern.php';
 ?>
 
 <h2 style="color:var(--text-dark); margin-bottom:1.2rem;"><i class="fas fa-envelope"></i> Contact Messages</h2>

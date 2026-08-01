@@ -1,11 +1,9 @@
 <?php
-
 require __DIR__ . '/config/database.php';
 require __DIR__ . '/includes/auth.php';
 require __DIR__ . '/includes/functions.php';
 $pageTitle = 'FAQ';
 require __DIR__ . '/includes/header.php';
-require __DIR__ . '/includes/bg-pattern.php';
 
 $faqs = get_db()->query('SELECT * FROM faqs ORDER BY sort_order ASC')->fetchAll();
 ?>

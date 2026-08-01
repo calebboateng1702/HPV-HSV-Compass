@@ -1,9 +1,7 @@
 <?php
-
 require __DIR__ . '/../config/database.php';
 require __DIR__ . '/../includes/auth.php';
 require __DIR__ . '/../includes/functions.php';
-
 require_admin();
 $pdo = get_db();
 
@@ -30,7 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $faqs = $pdo->query('SELECT * FROM faqs ORDER BY sort_order')->fetchAll();
 $pageTitle = 'Manage FAQs';
 require __DIR__ . '/_admin_header.php';
-require __DIR__ . '/../includes/bg-pattern.php';
 ?>
 
 <h2 style="color:var(--text-dark); margin-bottom:1.2rem;"><i class="fas fa-circle-question"></i> Manage FAQs</h2>

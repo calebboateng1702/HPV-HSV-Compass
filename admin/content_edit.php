@@ -1,5 +1,4 @@
 <?php
-
 require __DIR__ . '/../config/database.php';
 require __DIR__ . '/../includes/auth.php';
 require __DIR__ . '/../includes/functions.php';
@@ -60,7 +59,6 @@ $mediaItems = $mediaStmt->fetchAll();
 
 $pageTitle = 'Edit Content';
 require __DIR__ . '/_admin_header.php';
-require __DIR__ . '/../includes/bg-pattern.php';
 ?>
 
 <a href="<?= BASE_URL ?>/admin/content.php" style="color:var(--teal); font-weight:700; font-size:0.85rem;"><i class="fas fa-arrow-left"></i> Back to content list</a>

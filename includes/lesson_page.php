@@ -26,11 +26,41 @@ if (is_logged_in()) {
 }
 $pct = $progress ? topic_percent($progress) : 0;
 
+$heroContent = [
+    'hpv' => [
+        'eyebrow' => 'Understand the virus',
+        'lead' => "HPV is one of the most common sexually transmitted infections — and one of the most misunderstood. Learn how it spreads, how it's prevented, and what the vaccine actually does.",
+        'image' => 'https://images.pexels.com/photos/7659873/pexels-photo-7659873.jpeg?auto=compress&cs=tinysrgb&w=700',
+    ],
+    'hsv' => [
+        'eyebrow' => 'Understand the virus',
+        'lead' => 'HSV affects millions of people worldwide and is entirely manageable. Learn the facts about symptoms, treatment, and living well with it.',
+        'image' => 'https://images.pexels.com/photos/7659874/pexels-photo-7659874.jpeg?auto=compress&cs=tinysrgb&w=700',
+    ],
+];
+
 $pageTitle = $labels[$topic];
 require __DIR__ . '/header.php';
 ?>
 
-<div class="card">
+<section class="hero topic-hero">
+  <div>
+    <span class="hero-eyebrow"><i class="fas <?= $topicIcon ?>"></i> <?= e($heroContent[$topic]['eyebrow']) ?></span>
+   <h1 class="hpv-hsv-hero-title">All About <span class="topic-hero-emphasis"><?= e($labels[$topic]) ?></span></h1>
+   <p class="lead"><?= e($heroContent[$topic]['lead']) ?></p>
+    <div class="hero-cta">
+      <a href="#lessonCard" class="btn btn-primary"><i class="fas fa-book-open"></i> Jump to lessons</a>
+      <?php if (!is_logged_in()): ?>
+        <a href="<?= BASE_URL ?>/register.php" class="btn btn-outline"><i class="fas fa-user-plus"></i> Create free account</a>
+      <?php endif; ?>
+    </div>
+  </div>
+  <div class="hero-portrait">
+    <img src="<?= e($heroContent[$topic]['image']) ?>" alt="">
+  </div>
+</section>
+
+<div class="card" id="lessonCard">
   <div class="section-heading"><i class="fas <?= $topicIcon ?>"></i><h2><?= e($fullTitles[$topic]) ?></h2></div>
 
   <?php if (!is_logged_in()): ?>

@@ -2,7 +2,7 @@
 </main>
 <footer class="site-footer">
   <div class="footer-inner">
-    <div>© <?= date('Y') ?> HPV·HSV Compass — Stigma-free, science-based sexual health education.</div>
+    <div> &copy Copyright <?= date('Y') ?> Check mate — Stigma-free, science-based sexual health education.</div>
     <div class="footer-links">
       <a href="<?= BASE_URL ?>/about.php">About</a>
       <a href="<?= BASE_URL ?>/faq.php">FAQ</a>

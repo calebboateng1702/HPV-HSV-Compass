@@ -1,5 +1,4 @@
 <?php
-
 require __DIR__ . '/../config/database.php';
 require __DIR__ . '/../includes/auth.php';
 require __DIR__ . '/../includes/functions.php';
@@ -25,7 +24,6 @@ $bookings = $pdo->query('
 
 $pageTitle = 'Manage Bookings';
 require __DIR__ . '/_admin_header.php';
-require __DIR__ . '/../includes/bg-pattern.php';
 ?>
 
 <h2 style="color:var(--text-dark); margin-bottom:1.2rem;"><i class="fas fa-calendar-check"></i> Manage Bookings</h2>

@@ -1,18 +1,16 @@
 <?php
-
 require __DIR__ . '/config/database.php';
 require __DIR__ . '/includes/auth.php';
 require __DIR__ . '/includes/functions.php';
 if (is_logged_in()) { header('Location: ' . BASE_URL . '/dashboard.php'); exit; }
 $pageTitle = 'Home';
 require __DIR__ . '/includes/header.php';
-require __DIR__ . '/includes/bg-pattern.php';
 ?>
 
 <section class="hero">
   <div>
     <span class="hero-eyebrow"><i class="fas fa-shield-heart"></i> Stigma-free sexual health education</span>
-    <h1>Understand HPV & HSV — clearly, privately, and without judgment.</h1>
+    <h1>Understand <span class="hpv-hsv-emphasis">HPV</span> & <span class="hpv-hsv-emphasis">HSV</span> — clearly, privately, and without stigmatization.</h1>
     <p class="lead">Structured lessons, a knowledge quiz, an educational AI assistant, and a simple path to booking a confidential screening — all in one place.</p>
     <div class="hero-cta">
       <a href="<?= BASE_URL ?>/register.php" class="btn btn-primary"><i class="fas fa-user-plus"></i> Create free account</a>

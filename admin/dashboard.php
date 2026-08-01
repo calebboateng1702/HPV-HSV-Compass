@@ -1,9 +1,7 @@
 <?php
-
 require __DIR__ . '/../config/database.php';
 require __DIR__ . '/../includes/auth.php';
 require __DIR__ . '/../includes/functions.php';
-
 require_admin();
 
 $pdo = get_db();
@@ -17,7 +15,6 @@ $recentBookings = $pdo->query('SELECT b.*, u.name AS user_name FROM bookings b J
 
 $pageTitle = 'Admin Dashboard';
 require __DIR__ . '/_admin_header.php';
-require __DIR__ . '/../includes/bg-pattern.php';
 ?>
 
 <h2 style="color:var(--text-dark); margin-bottom:1.2rem;"><i class="fas fa-user-shield"></i> Admin Overview</h2>

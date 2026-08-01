@@ -1,15 +1,12 @@
 <?php
-
 require __DIR__ . '/config/database.php';
 require __DIR__ . '/includes/auth.php';
 require __DIR__ . '/includes/functions.php';
 require __DIR__ . '/includes/mailer.php';
 
-
 $email = trim($_GET['email'] ?? '');
 $pageTitle = 'Check your email';
 require __DIR__ . '/includes/header.php';
-require __DIR__ . '/includes/bg-pattern.php';
 ?>
 
 <div class="auth-page-grid">

@@ -1,5 +1,4 @@
 <?php
-
 require __DIR__ . '/config/database.php';
 require __DIR__ . '/includes/auth.php';
 require __DIR__ . '/includes/functions.php';
@@ -7,7 +6,6 @@ require_login();
 $user = current_user();
 $pageTitle = 'Book a Screening';
 require __DIR__ . '/includes/header.php';
-require __DIR__ . '/includes/bg-pattern.php';
 ?>
 
 <div class="card">
@@ -31,7 +29,7 @@ require __DIR__ . '/includes/bg-pattern.php';
         <div class="input-icon"><i class="fas fa-user field-icon"></i><input type="text" name="patient_name" id="patientName" value="<?= e($user['name']) ?>" required></div>
       </div>
       <div class="option-card-group">
-        <label class="option-card" data-value="HPV Test"><input type="radio" name="test_type" value="HPV Test"><div><div class="option-card-title">HPV  Test</div><div class="option-card-sub">Pap smear + HPV co-test</div></div></label>
+        <label class="option-card" data-value="HPV DNA Test"><input type="radio" name="test_type" value="HPV DNA Test"><div><div class="option-card-title">HPV DNA Test</div><div class="option-card-sub">Pap smear + HPV co-test</div></div></label>
         <label class="option-card" data-value="HSV-1/2 IgG Blood Test"><input type="radio" name="test_type" value="HSV-1/2 IgG Blood Test"><div><div class="option-card-title">HSV-1/2 IgG Blood Test</div><div class="option-card-sub">Simple blood draw</div></div></label>
         <label class="option-card" data-value="Comprehensive STI Panel"><input type="radio" name="test_type" value="Comprehensive STI Panel"><div><div class="option-card-title">Comprehensive STI Panel</div><div class="option-card-sub">Includes HPV &amp; HSV plus other common STIs</div></div></label>
       </div>

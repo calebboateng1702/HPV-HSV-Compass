@@ -51,7 +51,6 @@ $bookingCount = count($bookings);
 
 $pageTitle = 'Profile';
 require __DIR__ . '/includes/header.php';
-require __DIR__ . '/includes/bg-pattern.php';
 ?>
 
 <div class="profile-hero">

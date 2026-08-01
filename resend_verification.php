@@ -1,5 +1,4 @@
 <?php
-require __DIR__ . '/includes/bg-pattern.php';
 require __DIR__ . '/config/database.php';
 require __DIR__ . '/includes/auth.php';
 require __DIR__ . '/includes/functions.php';

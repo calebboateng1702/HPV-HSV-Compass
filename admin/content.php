@@ -1,16 +1,13 @@
 <?php
-
 require __DIR__ . '/../config/database.php';
 require __DIR__ . '/../includes/auth.php';
 require __DIR__ . '/../includes/functions.php';
-
 require_admin();
 $pdo = get_db();
 
 $content = $pdo->query('SELECT * FROM content ORDER BY topic, sort_order')->fetchAll();
 $pageTitle = 'Content (CMS)';
 require __DIR__ . '/_admin_header.php';
-require __DIR__ . '/../includes/bg-pattern.php';
 ?>
 
 <h2 style="color:var(--text-dark); margin-bottom:1.2rem;"><i class="fas fa-file-lines"></i> Content Management</h2>
